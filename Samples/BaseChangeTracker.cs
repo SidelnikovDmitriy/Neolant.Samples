@@ -7,13 +7,14 @@ using System.Xml.Linq;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using Samples.Abstract.Classes;
+using Samples.AbstractBase.Interfaces;
 
 namespace Samples
 {
     /// <summary>
     /// Отслеживание изменения объектов
     /// </summary>
-    public abstract class BaseChangeTracker : Base
+    public abstract class BaseChangeTracker : Base , IChangeTracker
     {
         /// <summary>
         /// Флаг допустимости отслеживания изменений
@@ -27,7 +28,7 @@ namespace Samples
         /// <summary>
         /// Сообщает об изменениях словаря изменений
         /// </summary>
-        public event EventHandler<ChangesChangedEventArgs> ChangesChanged;
+        public event EventHandler<IChangeTrackerObject> ChangesChanged;
 
         /// <summary>
         /// Флаг повествует о наличии изменений
@@ -55,7 +56,7 @@ namespace Samples
         public void ResetChanges()
         {
             Changes.Clear();
-            RaiseChangesChanged(new ChangesChangedEventArgs(Changes));
+            RaiseChangesChanged(new ChangesStateEventArgs(Changes));
         }
         /// <summary>
         /// Запуск отслеживания
@@ -74,7 +75,7 @@ namespace Samples
         }
 
         /// <summary>
-        /// Сообщаем о том, что свойство 
+        /// Сообщаем о том, что свойство
         /// изменилось 
         /// </summary>
         /// <typeparam name="T">Тип класса, содержащего свойство</typeparam>
@@ -104,7 +105,7 @@ namespace Samples
                 if (mTrackChanges)
                 {
                     // Логируем изменяемое свойство 
-                    SetChanges(propertyName, value);
+                    OnHasChanges(propertyName, value);
                     // сообщаем например View о его изменении
                     OnPropertyChanged(propertyName);
                 }
@@ -131,7 +132,7 @@ namespace Samples
                 if (mTrackChanges)
                 {
                     // Логируем изменяемое свойство 
-                    SetChanges(propertyName, value);
+                    OnHasChanges(propertyName, value);
                     // сообщаем, например View, о его изменении
                     OnPropertyChanged(propertyName);
                 }
@@ -146,15 +147,15 @@ namespace Samples
         /// <param name="field"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
-        public void ApplyPropertyChange<T, F>(ref ObservableCollection<F> field, Expression<Func<T, object>> property, ObservableCollection<F> value)
+        public void ApplyCollectionChange<T, F>(ref ObservableCollection<F> field, Expression<Func<T, object>> property, ObservableCollection<F> value)
             where F : BaseChangeTracker
         {
             //если присваиваем
             ApplyPropertyChange(ref field, property, value);
 
-            // Цепляем имя, можно использовать перегрузку с propertyName
+            // Цепляем имя
             string propertyName = GetMemberExpression(property).Member.Name;
-
+           
             //берем каждый элемент коллекции и  подписываем его на отслеживание изменений
             foreach (var item in value)
             {
@@ -179,9 +180,10 @@ namespace Samples
                         // ...
                         // пока нет необходимости
                 }
-                SetChanges(propertyName, values);
+                OnHasChanges(propertyName, values);
             };
         }
+
         /// <summary>
         /// Подписываем элемент коллекции на изменения
         /// </summary>
@@ -194,7 +196,7 @@ namespace Samples
             item.ChangesChanged += (o, eventArgs) =>
             {
                 if (eventArgs.IsDirty)
-                    SetChanges(collectionName, collectionValues);
+                    OnHasChanges(collectionName, collectionValues);
             };
         }
         /// <summary>
@@ -203,13 +205,13 @@ namespace Samples
         /// <typeparam name="T"></typeparam>
         /// <param name="propertyName"></param>
         /// <param name="value"></param>
-        protected void SetChanges<T>(string propertyName, T value)
+        public void OnHasChanges<T>(string propertyName, T value)
         {
             Changes[propertyName] = value;
             // Notify change
             OnPropertyChanged(propertyName);
 
-            RaiseChangesChanged(new ChangesChangedEventArgs(Changes));
+            RaiseChangesChanged(new ChangesStateEventArgs(Changes));
         }
 
         /// <summary>
@@ -225,7 +227,7 @@ namespace Samples
 
 
         /// <summary>
-        /// Get member expression
+        /// Получение члена выражения
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="expression"></param>
@@ -253,6 +255,7 @@ namespace Samples
 
             return memberExpression;
         }
+
         /// <summary>
         /// Запись наших измененеий в XML
         /// (фича, если нужно)
@@ -278,9 +281,9 @@ namespace Samples
         /// Сообщаем об изменении состояния
         /// </summary>
         /// <param name="e"></param>
-        private void RaiseChangesChanged(ChangesChangedEventArgs e)
+        private void RaiseChangesChanged(ChangesStateEventArgs e)
         {
-            EventHandler<ChangesChangedEventArgs> handler = ChangesChanged;
+            EventHandler<IChangeTrackerObject> handler = ChangesChanged;
             if (handler != null)
                 ChangesChanged(this, e);
         }
@@ -292,7 +295,8 @@ namespace Samples
     /// <summary>
     /// Класс аргументов события произошедших изменений в словаре изменений
     /// </summary>
-    public class ChangesChangedEventArgs : EventArgs
+    public class ChangesStateEventArgs : EventArgs, IChangeTrackerObject
+
     {
         /// <summary>
         /// Есть ли изменения
@@ -300,7 +304,6 @@ namespace Samples
         public bool IsDirty
         {
             get { return Changes.Count > 0; }
-
         }
 
         /// <summary>
@@ -312,7 +315,7 @@ namespace Samples
         /// Состояние объекта изменилось
         /// </summary>
         /// <param name="changes"></param>
-        public ChangesChangedEventArgs(Dictionary<string, object> changes)
+        public ChangesStateEventArgs(Dictionary<string, object> changes)
         {
             Changes = changes;
         }

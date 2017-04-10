@@ -1,1 +1,2 @@
 D:\Public\Git\Samples\Samples\Samples\obj\Debug\Samples.csprojResolveAssemblyReference.cache
+D:\Public\Git\Neolant.Samples\Samples\obj\Debug\Samples.csprojResolveAssemblyReference.cache

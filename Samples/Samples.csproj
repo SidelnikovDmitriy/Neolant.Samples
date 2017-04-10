@@ -41,12 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractBase\Classes\Base.cs" />
+    <Compile Include="AbstractBase\Interfaces\IChangeTracker.cs" />
     <Compile Include="BaseChangeTracker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AbstractBase\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
