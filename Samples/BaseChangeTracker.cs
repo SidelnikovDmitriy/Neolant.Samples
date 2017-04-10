@@ -199,6 +199,7 @@ namespace Samples
                     OnHasChanges(collectionName, collectionValues);
             };
         }
+
         /// <summary>
         /// Устанавливает изменения значений указанного свойства
         /// </summary>

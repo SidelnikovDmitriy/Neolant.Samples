@@ -2,7 +2,7 @@
 
 namespace Samples.Usings.ChangeTracker
 {
-    public class SampleModel : BaseChangeTracker
+    public class SampleObject : BaseChangeTracker
     {
         
         private string mDisplayName;
@@ -14,20 +14,20 @@ namespace Samples.Usings.ChangeTracker
             get { return mDisplayName; }
             set
             {
-                ApplyPropertyChange<SampleModel, string>(ref mDisplayName, p => p.DisplayName, value);
+                ApplyPropertyChange<SampleObject, string>(ref mDisplayName, p => p.DisplayName, value);
             }
         }
 
-        private ObservableCollection<SampleModel> mChilds;
+        private ObservableCollection<SampleObject> mChilds;
         /// <summary>
         /// Детки
         /// </summary>
-        public ObservableCollection<SampleModel> Childs
+        public ObservableCollection<SampleObject> Childs
         {
             get { return mChilds; }
             set
             {
-                ApplyCollectionChange<SampleModel, SampleModel>(ref mChilds, p => p.Childs, value);
+                ApplyCollectionChange<SampleObject, SampleObject>(ref mChilds, p => p.Childs, value);
             }
         }
     }
