@@ -30,7 +30,7 @@ namespace Samples.AbstractBase.Interfaces
         /// <summary>
         /// Сообщаем об изменении коллекции
         /// </summary>
-        void ApplyCollectionChange<T, F>(ref ObservableCollection<F> field, Expression<Func<T, object>> property, ObservableCollection<F> value) 
+        void ApplyCollectionChange<T, F>(ref ObservableCollection<F> field, Expression<Func<T, object>> property, ObservableCollection<F> value)
             where F : BaseChangeTracker;
         /// <summary>
         /// Действия по наличию изменений
@@ -41,7 +41,7 @@ namespace Samples.AbstractBase.Interfaces
         void OnHasChanges<T>(string propertyName, T value);
 
     }
-
+    
     public interface IChangeTrackerObject
     {
         /// <summary>

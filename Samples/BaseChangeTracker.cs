@@ -14,7 +14,7 @@ namespace Samples
     /// <summary>
     /// Отслеживание изменения объектов
     /// </summary>
-    public abstract class BaseChangeTracker : Base , IChangeTracker
+    public class BaseChangeTracker : Base , IChangeTracker
     {
         /// <summary>
         /// Флаг допустимости отслеживания изменений
