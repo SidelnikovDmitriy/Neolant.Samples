@@ -43,12 +43,12 @@
     <Compile Include="AbstractBase\Classes\Base.cs" />
     <Compile Include="AbstractBase\Interfaces\ICar.cs" />
     <Compile Include="AbstractBase\Interfaces\IChangeTracker.cs" />
-    <Compile Include="BaseChangeTracker.cs" />
+    <Compile Include="ChangeTracker\BaseChangeTracker.cs" />
     <Compile Include="Factory\CarFactory.cs" />
     <Compile Include="Factory\CarFactoryGenerator.cs" />
-    <Compile Include="Factory\FactoryMethodExample.cs" />
+    <Compile Include="Examples\Factory\FactoryMethodExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usings\ChangeTracker\SampleModel.cs" />
+    <Compile Include="Examples\ChangeTracker\SampleModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
