@@ -21,10 +21,6 @@ namespace Samples.Factory.Abstract_Factory
             }
         }
         /// <summary>
-        /// Описание
-        /// </summary>
-        protected virtual string Description { get; set; }
-        /// <summary>
         /// Кто-я?
         /// </summary>
         /// <returns></returns>
