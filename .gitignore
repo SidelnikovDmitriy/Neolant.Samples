@@ -49,3 +49,7 @@ Temporary Items
 .vs/Samples/v14/.suo
 .vs/Samples/v14/.suo
 *.suo
+.vs/Samples/v14/.suo
+Samples/bin/Debug/Samples.exe
+Samples/obj/Debug/Samples.csproj.FileListAbsolute.txt
+Samples/obj/Debug/Samples.exe
