@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,6 +50,7 @@
     <Compile Include="AbstractBase\Interfaces\IChangeTracker.cs" />
     <Compile Include="ChangeTracker\BaseChangeTracker.cs" />
     <Compile Include="Examples\Factory\AbstractFactoryExample.cs" />
+    <Compile Include="Extenssions\CollectionExtenssions.cs" />
     <Compile Include="Factory\Abstract_Factory\Female.cs" />
     <Compile Include="Factory\Abstract_Factory\Human.cs" />
     <Compile Include="Factory\Abstract_Factory\HumanFactory.cs" />
@@ -62,9 +64,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Examples\ChangeTracker\SampleModel.cs" />
     <Compile Include="StartExample.cs" />
+    <Compile Include="Utils\Randomizer\Randomizer.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

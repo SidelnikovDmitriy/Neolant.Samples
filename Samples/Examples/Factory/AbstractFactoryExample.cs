@@ -3,6 +3,8 @@ using Samples.Factory.Abstract_Factory;
 using Samples.Factory.Abstract_Factory.Humans;
 using System.Collections.Generic;
 using Samples.AbstractBase.Classes;
+using Samples.Extenssions;
+using System.Text;
 
 namespace Samples.Examples.Factory
 {
@@ -13,6 +15,10 @@ namespace Samples.Examples.Factory
         /// </summary>
         public override void Run()
         {
+
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
+
             var factories = new List<HumanFactory>()
             {
                 new EuropeanFactory(),
@@ -20,10 +26,43 @@ namespace Samples.Examples.Factory
                 new NiggerFactory()
             };
 
+            var all = GetAllHumans(factories);
+
+            foreach (var human in all)
+                AskForHuman(human);
+
+         
+
+            Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Возращает коллекцию людей
+        /// </summary>
+        /// <param name="factories"></param>
+        /// <returns></returns>
+        private IEnumerable<Human> GetAllHumans(IEnumerable<HumanFactory> factories)
+        {
+            var all = new List<Human>();
+
             foreach (var factory in factories)
             {
-                Human human = factory.GetRandom();
-                AskForHuman(human);
+                all.AddRange(CreateHumans(factory));
+            }
+
+            return all.Randomize();
+        }
+
+        /// <summary>
+        /// Создает коллекцию из 5 человек
+        /// </summary>
+        /// <param name="factory"></param>
+        /// <returns></returns>
+        private IEnumerable<Human> CreateHumans(HumanFactory factory)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                yield return factory.GetRandom();
             }
         }
 

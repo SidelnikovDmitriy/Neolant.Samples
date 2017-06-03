@@ -1,5 +1,8 @@
 ﻿namespace Samples.Factory.Abstract_Factory.Humans
 {
+    /// <summary>
+    /// Мужик азиат
+    /// </summary>
     public class AsianMale : Male
     {
         public override string[] Replies
@@ -17,10 +20,12 @@
 
         protected override string GetDescription(string description = null)
         {
-            return base.GetDescription("シチュー");
+            return base.GetDescription("asian シチュー");
         }
     }
-
+    /// <summary>
+    /// Женщина азиат
+    /// </summary>
     public class AsianFemale : Female
     {
         public override string[] Replies
@@ -38,7 +43,7 @@
 
         protected override string GetDescription(string description = null)
         {
-            return base.GetDescription("茄子");
+            return base.GetDescription("asian 茄子");
         }
     }
 }

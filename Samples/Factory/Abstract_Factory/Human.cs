@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Samples.Utils.Randomizer;
 
 namespace Samples.Factory.Abstract_Factory
 {
@@ -14,7 +14,7 @@ namespace Samples.Factory.Abstract_Factory
         {
             get
             {
-                return new[]
+                return new []
                 {
                     "How are you ?"
                 };
@@ -26,7 +26,8 @@ namespace Samples.Factory.Abstract_Factory
         /// <returns></returns>
         public virtual string WhoAreYoure()
         {
-            return string.Format("Hey! i'm {0}! {1}", GetDescription(), Replies[new Random().Next(0, Replies.Length)]);
+            var rand = Randomizer.Instance();
+            return string.Format("Hey! i'm {0}! {1}", GetDescription(), Replies[rand.Random.Next(0, Replies.Length)]);
         }
         /// <summary>
         /// Задает описание

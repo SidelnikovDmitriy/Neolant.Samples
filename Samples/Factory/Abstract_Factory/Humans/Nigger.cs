@@ -1,7 +1,8 @@
-﻿using System;
-
-namespace Samples.Factory.Abstract_Factory.Humans
+﻿namespace Samples.Factory.Abstract_Factory.Humans
 {
+    /// <summary>
+    /// Мужчина нигер
+    /// </summary>
     public class NiggerMale : Male
     {
         public override string[] Replies
@@ -23,7 +24,9 @@ namespace Samples.Factory.Abstract_Factory.Humans
             return base.GetDescription("real nigga");
         }
     }
-
+    /// <summary>
+    /// Женщина нигер
+    /// </summary>
     public class NiggerFemale : Female
     {
         public override string[] Replies

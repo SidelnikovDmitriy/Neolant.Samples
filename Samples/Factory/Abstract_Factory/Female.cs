@@ -2,7 +2,7 @@
 {
     public abstract class Female : Human
     {
-        public const string cFemale = "Woman";
+        public const string cFemale = "woman";
 
         protected override string GetDescription(string description = null)
         {

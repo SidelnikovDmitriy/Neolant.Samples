@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Samples.Utils.Randomizer;
 
 namespace Samples.Factory.Abstract_Factory
 {
@@ -23,7 +23,8 @@ namespace Samples.Factory.Abstract_Factory
         /// <returns></returns>
         public virtual Human GetRandom()
         {
-            var result = new Random().Next(0, 100) < 50;
+            var rand = Randomizer.Instance();
+            var result = rand.Random.Next(0, 100) < 50;
 
             if (result)
                 return MakeFemale();
