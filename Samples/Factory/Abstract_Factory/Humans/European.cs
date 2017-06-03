@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 namespace Samples.Factory.Abstract_Factory.Humans
 {
@@ -8,6 +7,9 @@ namespace Samples.Factory.Abstract_Factory.Humans
     /// </summary>
     public class EuropeanMale : Male
     {
+        /// <summary>
+        /// Фразы европейцев
+        /// </summary>
         public static string[] EuropeanReplies
         {
             get
@@ -23,9 +25,13 @@ namespace Samples.Factory.Abstract_Factory.Humans
                 };
             }
         }
-
+        /// <summary>
+        /// Фразы европейцев
+        /// </summary>
         public override string[] Replies { get { return EuropeanReplies; } }
-
+        /// <summary>
+        /// Описание
+        /// </summary>
         protected override string GetDescription(string description = null)
         {
            return base.GetDescription("european"); 
@@ -36,6 +42,9 @@ namespace Samples.Factory.Abstract_Factory.Humans
     /// </summary>
     public class EuropeanFemale : Female
     {
+        /// <summary>
+        /// Фразы европейцев
+        /// </summary>
         public override string[] Replies
         {
             get
@@ -48,6 +57,9 @@ namespace Samples.Factory.Abstract_Factory.Humans
                 }).ToArray();
             }
         }
+        /// <summary>
+        /// Описание
+        /// </summary>
         protected override string GetDescription(string description = null)
         {
             return base.GetDescription("european");

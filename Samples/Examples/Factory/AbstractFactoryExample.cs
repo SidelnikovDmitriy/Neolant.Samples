@@ -8,6 +8,7 @@ using System.Text;
 
 namespace Samples.Examples.Factory
 {
+
     public class AbstractFactoryExample : ExampleBase
     {
         /// <summary>
@@ -35,7 +36,6 @@ namespace Samples.Examples.Factory
 
             Console.ReadLine();
         }
-
         /// <summary>
         /// Возращает коллекцию людей
         /// </summary>
@@ -52,7 +52,6 @@ namespace Samples.Examples.Factory
 
             return all.Randomize();
         }
-
         /// <summary>
         /// Создает коллекцию из 5 человек
         /// </summary>
@@ -65,7 +64,6 @@ namespace Samples.Examples.Factory
                 yield return factory.GetRandom();
             }
         }
-
         /// <summary>
         /// Пусть пояснит
         /// </summary>

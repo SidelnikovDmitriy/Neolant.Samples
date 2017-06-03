@@ -1,9 +1,19 @@
 ﻿namespace Samples.Factory.Abstract_Factory
 {
+    /// <summary>
+    /// Женщина
+    /// </summary>
     public abstract class Female : Human
     {
+        /// <summary>
+        /// Константа обозначающая женщину
+        /// </summary>
         public const string cFemale = "woman";
-
+        /// <summary>
+        /// Описание
+        /// </summary>
+        /// <param name="description"></param>
+        /// <returns></returns>
         protected override string GetDescription(string description = null)
         {
 
