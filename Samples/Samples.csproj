@@ -58,8 +58,8 @@
     <Compile Include="Factory\Abstract_Factory\Humans\European.cs" />
     <Compile Include="Factory\Abstract_Factory\Humans\Nigger.cs" />
     <Compile Include="Factory\Abstract_Factory\Male.cs" />
-    <Compile Include="Factory\CarFactory.cs" />
-    <Compile Include="Factory\CarFactoryGenerator.cs" />
+    <Compile Include="Factory\FactoryMethod\CarFactory.cs" />
+    <Compile Include="Factory\FactoryMethod\CarFactoryGenerator.cs" />
     <Compile Include="Examples\Factory\FactoryMethodExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Examples\ChangeTracker\SampleModel.cs" />
