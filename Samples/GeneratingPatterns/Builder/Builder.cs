@@ -30,21 +30,10 @@ namespace Samples.GeneratingPatterns.Builder
         /// <returns></returns>
         public abstract Building CreateBuilding();
 
-        private Building mBuilding;
         /// <summary>
         /// Хранит экземпляр постройки
         /// </summary>
-        protected Building Building
-        {
-            get
-            {
-                return mBuilding ?? (new Building());
-            }
-            private set
-            {
-                mBuilding = value;
-            }
-        }
+        protected Building Building { get; private set; }
     }
 
     public interface IBuilder<T> where T : Base
