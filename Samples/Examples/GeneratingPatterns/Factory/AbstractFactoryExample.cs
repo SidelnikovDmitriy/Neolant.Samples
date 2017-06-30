@@ -12,6 +12,13 @@ namespace Samples.Examples.Factory
     public class AbstractFactoryExample : ExampleBase
     {
         /// <summary>
+        /// Ctor
+        /// </summary>
+        public AbstractFactoryExample():
+            base("Абстрактная фабрика")
+        {
+        }
+        /// <summary>
         /// Запуск примера
         /// </summary>
         public override void Run()
@@ -31,10 +38,7 @@ namespace Samples.Examples.Factory
 
             foreach (var human in all)
                 AskForHuman(human);
-
-         
-
-            Console.ReadLine();
+            
         }
         /// <summary>
         /// Возращает коллекцию людей

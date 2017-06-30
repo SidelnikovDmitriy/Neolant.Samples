@@ -6,6 +6,8 @@ namespace Samples.Abstract.Classes
 {
     public abstract class Base: INotifyPropertyChanged
     {
+        public string DisplayName { get; set; }
+
         #region INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;

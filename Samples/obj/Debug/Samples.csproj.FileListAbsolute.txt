@@ -3,3 +3,4 @@ D:\Public\Git\Neolant.Samples\Samples\bin\Debug\Samples.pdb
 D:\Public\Git\Neolant.Samples\Samples\obj\Debug\Samples.pdb
 D:\Public\Git\Neolant.Samples\Samples\bin\Debug\Samples.exe
 D:\Public\Git\Neolant.Samples\Samples\obj\Debug\Samples.exe
+D:\Public\Git\Neolant.Samples\Samples\obj\Debug\Samples.csprojResolveAssemblyReference.cache
