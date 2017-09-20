@@ -31,7 +31,7 @@ namespace Samples.Examples.Factory
             {
                 new EuropeanFactory(),
                 new AsianFactory(),
-                new NiggerFactory()
+                new AfricanFactory()
             };
 
             var all = GetAllHumans(factories);
@@ -125,7 +125,7 @@ namespace Samples.Examples.Factory
     /// <summary>
     /// Европейцы
     /// </summary>
-    class NiggerFactory : HumanFactory
+    class AfricanFactory : HumanFactory
     {
         /// <summary>
         /// Создет женщину
@@ -133,7 +133,7 @@ namespace Samples.Examples.Factory
         /// <returns></returns>
         public override Female MakeFemale()
         {
-            return new NiggerFemale();
+            return new AfricanFemale();
         }
         /// <summary>
         /// Создет мужика
@@ -141,7 +141,7 @@ namespace Samples.Examples.Factory
         /// <returns></returns>
         public override Male MakeMale()
         {
-            return new NiggerMale();
+            return new AfricanMale();
         }
 
     }

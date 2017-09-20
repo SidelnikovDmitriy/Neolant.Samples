@@ -20,7 +20,7 @@
         /// </summary>
         public override void BuildWalls()
         {
-            Building.Add("Стены помечены Обамой");
+            Building.Add("Стены побиты");
         }
         /// <summary>
         /// Строим пол

@@ -18,8 +18,6 @@ namespace Samples.Factory.Abstract_Factory.Humans
                 {
                     "How are you?",
                     "Как дела?",
-                    "ЦЕ-ЄВРОПА!",
-                    "K**wa! Per**le!",
                     "jak się masz?",
                     "Wie geht es Ihnen?"
                 };
@@ -62,7 +60,7 @@ namespace Samples.Factory.Abstract_Factory.Humans
         /// </summary>
         protected override string GetDescription(string description = null)
         {
-            return base.GetDescription("european");
+            return base.GetDescription("european woman");
         }
     }
 }

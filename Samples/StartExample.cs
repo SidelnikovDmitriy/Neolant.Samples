@@ -2,7 +2,6 @@
 using Samples.Examples.Builder;
 using Samples.Examples.Factory;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Samples
@@ -54,12 +53,12 @@ namespace Samples
             var baseValue = Console.ReadLine().Trim();
 
 
-            byte byteValue = 0;
+            byte selectValue = 0;
 
-            var correct = byte.TryParse(baseValue, out byteValue);
+            var correct = byte.TryParse(baseValue, out selectValue);
 
 
-            if (!correct || !mMenu.ContainsKey(byteValue))
+            if (!correct || !mMenu.ContainsKey(selectValue))
                 ShowMenu();
 
 
@@ -67,7 +66,7 @@ namespace Samples
 
             Console.WriteLine(">Выполняю:");
 
-            ExecuteExample(byteValue);
+            ExecuteExample(selectValue);
 
             Console.WriteLine("-----------------------------------------");
             Console.WriteLine("Нажмите <Enter> чтобы вернуться в меню...");

@@ -3,7 +3,7 @@
     /// <summary>
     /// Мужчина нигер
     /// </summary>
-    public class NiggerMale : Male
+    public class AfricanMale : Male
     {
         /// <summary>
         /// Фразы негра
@@ -14,10 +14,9 @@
             {
                 return new[]
                 {
-                    "Give me the money bitch! 🔫 🔫",
-                    "Where is KFC?",
-                    "Let's play basketball?",
-                    "What's up motherf**ker?"
+                    "hoe gaan dit met jou",
+                    "jou?",
+                    "Hallo, wat doen jy?"
                 };
             }
         }
@@ -28,13 +27,13 @@
         /// <returns></returns>
         protected override string GetDescription(string description = null)
         {
-            return base.GetDescription("real nigga");
+            return base.GetDescription("real man");
         }
     }
     /// <summary>
     /// Женщина нигер
     /// </summary>
-    public class NiggerFemale : Female
+    public class AfricanFemale : Female
     {
         /// <summary>
         /// Фразы негра
@@ -45,9 +44,9 @@
             {
                 return new[]
                 {
-                    "KFC? Where is KFC?",
-                    "What's up motherf**ker?",
-                    "Oj wsyo!"
+                    "Any text for sample...",
+                    "Hallo, wat doen jy?",
+                    "O, dis alles!"
                 };
             }
         }
@@ -57,7 +56,7 @@
         /// <param name="description"></param>
         protected override string GetDescription(string description = null)
         {
-            return base.GetDescription("nigga");
+            return base.GetDescription("real woman");
         }
     }
 

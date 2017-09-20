@@ -64,7 +64,7 @@
     <Compile Include="GeneratingPatterns\Factory\Abstract_Factory\HumanFactory.cs" />
     <Compile Include="GeneratingPatterns\Factory\Abstract_Factory\Humans\Asian.cs" />
     <Compile Include="GeneratingPatterns\Factory\Abstract_Factory\Humans\European.cs" />
-    <Compile Include="GeneratingPatterns\Factory\Abstract_Factory\Humans\Nigger.cs" />
+    <Compile Include="GeneratingPatterns\Factory\Abstract_Factory\Humans\African.cs" />
     <Compile Include="GeneratingPatterns\Factory\Abstract_Factory\Male.cs" />
     <Compile Include="GeneratingPatterns\Factory\FactoryMethod\CarFactory.cs" />
     <Compile Include="GeneratingPatterns\Factory\FactoryMethod\CarFactoryGenerator.cs" />

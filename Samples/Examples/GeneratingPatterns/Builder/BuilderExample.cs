@@ -33,7 +33,6 @@ namespace Samples.Examples.Builder
                 Show(building);
             }
 
-
         }
         /// <summary>
         /// Показываем здание
