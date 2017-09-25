@@ -9,7 +9,7 @@ namespace Examples.Patterns
     {
 
         public BuilderExample() :
-            base("Builder (Строитель)")
+            base("Builder (Строитель)", "Порождающие паттерны")
         {
         }
 

@@ -31,18 +31,14 @@ namespace Samples.Menu
                 Console.WriteLine("№{0}. {1}", menu.Key, menu.Value.DisplayName);
             }
 
-
-
             Console.WriteLine("----------------------");
             Console.WriteLine("Введите номер примера:");
 
             var baseValue = Console.ReadLine().Trim();
 
-
             int selectValue = 0;
 
             var correct = int.TryParse(baseValue, out selectValue);
-
 
             if (!correct || !mMenu.MenuData.ContainsKey(selectValue))
                 ShowMenu(menuModel);

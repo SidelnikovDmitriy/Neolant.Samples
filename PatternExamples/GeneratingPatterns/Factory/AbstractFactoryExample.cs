@@ -14,7 +14,7 @@ namespace Examples.Patterns
         /// Ctor
         /// </summary>
         public AbstractFactoryExample():
-            base("Абстрактная фабрика")
+            base("Абстрактная фабрика", "Порождающие паттерны")
         {
         }
         /// <summary>
