@@ -1,6 +1,10 @@
 D:\Public\Git\Samples\Samples\Samples\obj\Debug\Samples.csprojResolveAssemblyReference.cache
-D:\Public\Git\Neolant.Samples\Samples\bin\Debug\Samples.pdb
-D:\Public\Git\Neolant.Samples\Samples\obj\Debug\Samples.pdb
 D:\Public\Git\Neolant.Samples\Samples\bin\Debug\Samples.exe
-D:\Public\Git\Neolant.Samples\Samples\obj\Debug\Samples.exe
+D:\Public\Git\Neolant.Samples\Samples\bin\Debug\Samples.pdb
+D:\Public\Git\Neolant.Samples\Samples\bin\Debug\Common.dll
+D:\Public\Git\Neolant.Samples\Samples\bin\Debug\Examples.dll
+D:\Public\Git\Neolant.Samples\Samples\bin\Debug\Common.pdb
+D:\Public\Git\Neolant.Samples\Samples\bin\Debug\Examples.pdb
 D:\Public\Git\Neolant.Samples\Samples\obj\Debug\Samples.csprojResolveAssemblyReference.cache
+D:\Public\Git\Neolant.Samples\Samples\obj\Debug\Samples.exe
+D:\Public\Git\Neolant.Samples\Samples\obj\Debug\Samples.pdb
